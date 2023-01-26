@@ -6,9 +6,11 @@
   font-family: sans-serif;
   font-size: 22px;
   padding: 10px;
+  
 }
 
 .quoteBox { 
+  font-family: 'Cormorant Garamond', serif;
   background-color: white;
   padding: 15px;
   border-radius: 10px;
@@ -46,4 +48,12 @@
 
 .quoteBox__button:hover {
   transform: scale(1.1);
+}
+
+p.quoteBox__quote {
+  font-family: 'Cormorant Garamond', serif;
+  text-shadow: 1px 1px 10px  rgb(255, 231, 231); 
+  
+
+
 }

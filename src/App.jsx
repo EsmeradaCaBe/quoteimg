@@ -2,8 +2,10 @@ import { useState } from "react";
 import './App.css';
 import QuoteBox from "./components/QuoteBox";
 import db from "./db/quotes.json";
+import images from  "./db/img.json";
 
-const arrayColors = ["#00c6ab","#c8ad8d","#f86f6f","#6aa3b4","#15ab92","#1e91ed"];
+const arrayColors = ["#b59da4","#c8ad8d","#f86f6f","#6aa3b4","#15ab92","#1e91ed"];
+
 
 const getRandom = (arrayElements) => {
   const quantityValues = arrayElements.length;
@@ -16,14 +18,17 @@ function App() {
   
   const [color, setColor] = useState(getRandom(arrayColors));
 
+  const [background, setBackground] = useState(getRandom(images));
+
   const newQuote = () => {
     setQuote(getRandom(db));
     setColor(getRandom(arrayColors));
+    setBackground(getRandom(images));
   }
   
-  console.log(getRandom(db));
+  console.log(background);
   return (
-    <div className="App" style={{backgroundColor: color}}>
+    <div className="App" style={ {backgroundImage: `url(${background.src})`}} >
       <QuoteBox 
       quote={quote} 
       newQuote={newQuote} 
